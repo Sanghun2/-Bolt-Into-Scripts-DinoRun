@@ -8,3 +8,12 @@ https://www.youtube.com/watch?v=ktm-hvm6r8s
 ### 제작목적
 * 이번 프로젝트의 목적은 스크립트가 없이 볼트로 제작된 유니티 프로젝트를 스크립트를 사용해서 똑같이 구현하는 것 입니다.
 
+
+### 3.장애물 만들기
+![Dino Run 3](https://user-images.githubusercontent.com/50513500/152314304-e6acbdd3-7bff-4153-b713-92d237a6955c.gif)
+
+##### 구현
+* 장애물 [선인장]을 추가.
+* 랜덤으로 장애물 [선인장]이 등장.
+* 선인장에 부딫힐 시 Die상태로 변하며, 애니메이션과 사운드 재생.
+* Die상태에서 점프 동작 및 LandSound 작동불가.

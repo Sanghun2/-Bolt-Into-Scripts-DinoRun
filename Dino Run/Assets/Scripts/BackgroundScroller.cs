@@ -8,6 +8,7 @@ public class BackgroundScroller : MonoBehaviour
     [SerializeField] Transform[] cloud;
     [SerializeField] Transform[] mountain;
     [SerializeField] Transform[] ground;
+    [SerializeField] Transform[] objection;
 
     [SerializeField] float skySpeed;
     [SerializeField] float cloudSpeed;
@@ -50,10 +51,34 @@ public class BackgroundScroller : MonoBehaviour
             obj.Translate(moveVec * groundSpeed * Time.deltaTime);
             if (obj.transform.position.x < -12) RePosition(obj);
         }
+        //장애물
+        foreach (var obj in objection)
+        {
+            obj.Translate(moveVec * groundSpeed * Time.deltaTime);
+            if (obj.transform.position.x < -12) RePosition(obj, Random.Range(0,3));
+        }
     }
 
     void RePosition(Transform tr)
     {
         tr.localPosition += ResetVec;
+    }
+    
+    //만약 장애물일 때는 랜덤으로 등장하게 만드는 기능. 재배치 함수 오버로딩 사용. by상훈_20.02.03
+    void RePosition(Transform tr, int rand)
+    {
+        tr.localPosition += ResetVec;
+        switch (rand)
+        {
+            case 0:
+            case 1:
+                tr.gameObject.SetActive(true); //66.6% 확률로 재등장
+                break;
+            case 2:
+                tr.gameObject.SetActive(false);
+                break;
+            default:
+                break;
+        }
     }
 }

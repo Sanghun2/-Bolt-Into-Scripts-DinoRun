@@ -6,6 +6,7 @@ public class Player : MonoBehaviour
 {
     [SerializeField] float jumpPower;
     Rigidbody2D rigid;
+    bool isDead;
 
     [SerializeField] SoundManager soundManager;
     [SerializeField] Animator anim;
@@ -23,6 +24,7 @@ public class Player : MonoBehaviour
 
     void Jump()
     {
+        if (isDead) return;
         rigid.AddForce(Vector2.up * jumpPower, ForceMode2D.Impulse);
         anim.SetBool("isJump", true);
         soundManager.JumpSound();
@@ -34,7 +36,18 @@ public class Player : MonoBehaviour
         if (collision.gameObject.CompareTag("Ground") && anim.GetBool("isJump"))
         {
             anim.SetBool("isJump", false);
-            soundManager.LandSound();
+            if(!isDead) soundManager.LandSound();
+        }
+    }
+
+    void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.CompareTag("Objection") && !isDead)
+        {
+            anim.SetTrigger("doDie");
+            soundManager.DieSound();
+            Time.timeScale = 0;
+            isDead = true;
         }
     }
 }

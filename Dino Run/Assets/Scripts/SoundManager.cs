@@ -22,4 +22,10 @@ public class SoundManager : MonoBehaviour
         playerChanel.clip = landClip;
         playerChanel.Play();
     }
+
+    public void DieSound()
+    {
+        playerChanel.clip = dieClip;
+        playerChanel.Play();
+    }
 }

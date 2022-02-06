@@ -4,12 +4,20 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
-    [SerializeField] float jumpPower;
     Rigidbody2D rigid;
     bool isDead;
 
-    [SerializeField] SoundManager soundManager;
+    [Header("능력치")]
+    [SerializeField] float jumpPower;
+
+    [Header("애니메이션")]
+    [Space(15f)]
     [SerializeField] Animator anim;
+
+    [Header("매니저")][Space(15f)]
+    [SerializeField] GameManager gameManager;
+    [SerializeField] SoundManager soundManager;
+    [SerializeField] BackgroundScroller bScroller;
 
     void Awake()
     {
@@ -17,7 +25,7 @@ public class Player : MonoBehaviour
         anim = GetComponent<Animator>();
     }
 
-    void Update()
+    void FixedUpdate()
     {
         if (Input.GetButtonDown("Jump") && !anim.GetBool("isJump")) Jump();
     }
@@ -29,6 +37,9 @@ public class Player : MonoBehaviour
         anim.SetBool("isJump", true);
         soundManager.JumpSound();
     }
+
+    //플레이어 사망상태 bool값 반환. by상훈_22.02.05
+    public bool IsDead() => isDead; 
 
     void OnCollisionEnter2D(Collision2D collision)
     {
@@ -42,12 +53,17 @@ public class Player : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D collision)
     {
+        //장애물에 닿았을 때 Die상태로 변경 및 플레이어 행동 정지. by상훈_22.02.05
         if (collision.CompareTag("Objection") && !isDead)
         {
-            anim.SetTrigger("doDie");
-            soundManager.DieSound();
-            Time.timeScale = 0;
             isDead = true;
+            bScroller.TimeStop();
+            rigid.gravityScale = 0;
+            soundManager.DieSound();
+            anim.SetTrigger("doDie");
+            gameManager.SetHighScore();
+            rigid.velocity = Vector2.zero;
+            gameManager.ShowGameOver(true);
         }
     }
 }

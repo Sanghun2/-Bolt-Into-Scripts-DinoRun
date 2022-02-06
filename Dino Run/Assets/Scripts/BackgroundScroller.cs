@@ -4,16 +4,19 @@ using UnityEngine;
 
 public class BackgroundScroller : MonoBehaviour
 {
+    [Header("배경 이미지")]
     [SerializeField] Transform[] sky;
     [SerializeField] Transform[] cloud;
     [SerializeField] Transform[] mountain;
     [SerializeField] Transform[] ground;
     [SerializeField] Transform[] objection;
 
-    [SerializeField] float skySpeed;
-    [SerializeField] float cloudSpeed;
-    [SerializeField] float mountainSpeed;
-    [SerializeField] float groundSpeed;
+    [Header("게임 속도")][Space(15f)]
+    [SerializeField][Tooltip("게임의 속도")] float totalSpeed;
+    float skySpeed;
+    float cloudSpeed;
+    float mountainSpeed;
+    float groundSpeed;
 
     Vector3 moveVec;
     Vector3 ResetVec;
@@ -23,6 +26,8 @@ public class BackgroundScroller : MonoBehaviour
         //매번 new를 사용하면 가비지가 생길 것을 고려해 미리 저장해두고 참조하는 방식으로 사용.
         moveVec = Vector3.left;
         ResetVec = Vector3.right * 24;
+
+        ChangeGameSpeed(1); //처음 게임속도 1로 설정
     }
 
     void Update()
@@ -80,5 +85,24 @@ public class BackgroundScroller : MonoBehaviour
             default:
                 break;
         }
+    }
+
+    //배경을 멈춰서 게임이 멈추게 보이는 기능. by상훈_22.02.05
+    public void TimeStop()
+    {
+        skySpeed = 0;
+        cloudSpeed = 0;
+        mountainSpeed = 0;
+        groundSpeed = 0;
+    }
+
+    //게임속도 변경 기능. by상훈_22.02.05
+    public void ChangeGameSpeed(float speed)
+    {
+        totalSpeed = speed;
+        skySpeed = totalSpeed;
+        cloudSpeed = totalSpeed * 2;
+        mountainSpeed = totalSpeed * 3;
+        groundSpeed = totalSpeed * 5;
     }
 }

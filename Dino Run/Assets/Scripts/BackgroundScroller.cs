@@ -63,7 +63,7 @@ public class BackgroundScroller : MonoBehaviour
             if (obj.transform.position.x < -12) RePosition(obj, Random.Range(0,3));
         }
     }
-
+    //배경이 어느 지점에 다다르면 재배치(스크롤링) 기능. by상훈_20.02.03
     void RePosition(Transform tr)
     {
         tr.localPosition += ResetVec;

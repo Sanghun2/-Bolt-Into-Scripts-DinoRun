@@ -30,7 +30,7 @@ public class GameManager : MonoBehaviour
     float maxSpeed => 2.5f;
     float score;
     float gameSpeed;
-    YieldInstruction waitFor1Sec;
+    YieldInstruction waitFor0_5Sec; //0.5초
 
     void Awake()
     {
@@ -39,7 +39,7 @@ public class GameManager : MonoBehaviour
         Application.targetFrameRate = 45;
 
         //가비지 생성을 줄이기 위해 미리 객체를 생성해 두고 참조. by상훈_22.02.05
-        waitFor1Sec = new WaitForSeconds(1f);
+        waitFor0_5Sec = new WaitForSeconds(0.5f);
     }
 
     void Start()
@@ -55,15 +55,15 @@ public class GameManager : MonoBehaviour
         {
             //점수 표시 로직. by상훈_22.02.04
             score += Time.deltaTime*weight;
-            //점수가 최대치를 넘을 때 예외처리. by상훈_22.02.05
+            //점수가 최대치를 넘을 때 9999로 예외처리. by상훈_22.02.05
             if (score < 10000) scoreText.text = $"{((int)score):0000}";
             else scoreText.text = "9999";
 
             if ((int)score % 10 == 0 && (int)score > 0 && !isChecking)
             {
-                textAnim.SetTrigger("doCheck");
+                checkPoint += 10; 
                 isChecking = true;
-                checkPoint += 10;
+                textAnim.SetTrigger("doCheck");
             }
 
             if ((int)score % 10 == 1)
@@ -85,7 +85,7 @@ public class GameManager : MonoBehaviour
     //씬 리로드 기능. by상훈_22.02.05
     IEnumerator LoadScene()
     {
-        yield return waitFor1Sec;
+        yield return waitFor0_5Sec;
         SceneManager.LoadScene(0);
     }
 

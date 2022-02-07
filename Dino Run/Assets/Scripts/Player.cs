@@ -21,21 +21,23 @@ public class Player : MonoBehaviour
 
     void Awake()
     {
-        rigid = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
+        rigid = GetComponent<Rigidbody2D>();
     }
 
     void FixedUpdate()
     {
-        if (Input.GetButtonDown("Jump") && !anim.GetBool("isJump")) Jump();
+        //터치로 점프 기능 구현. by상훈_22.02.08
+        if ((Input.GetButtonDown("Jump") || Input.GetButtonDown("Fire1") || Input.GetButtonDown("Fire2")) && !anim.GetBool("isJump"))
+            Jump();
     }
 
     void Jump()
     {
         if (isDead) return;
-        rigid.AddForce(Vector2.up * jumpPower, ForceMode2D.Impulse);
-        anim.SetBool("isJump", true);
         soundManager.JumpSound();
+        anim.SetBool("isJump", true);
+        rigid.AddForce(Vector2.up * jumpPower, ForceMode2D.Impulse);
     }
 
     //플레이어 사망상태 bool값 반환. by상훈_22.02.05

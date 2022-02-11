@@ -1,4 +1,4 @@
-# [Bolt into Scripts] 공룡런 게임 만들기
+# [Bolt Into Scripts] 공룡런 게임 만들기
 
 https://www.youtube.com/watch?v=ktm-hvm6r8s
 

@@ -8,6 +8,8 @@ https://www.youtube.com/watch?v=ktm-hvm6r8s
 ### 제작목적
 * 이번 프로젝트의 목적은 스크립트가 없이 볼트로 제작된 유니티 프로젝트의 영상을 보고 스크립트를 사용해서 똑같이 구현하여 스크립트를 다루는 역량을 키우는 것 입니다.
 
+##### 간단한 플레이영상
+![Dino Run Final](https://user-images.githubusercontent.com/50513500/153626666-e64447b4-3c87-4834-91ad-c5e8ed66884b.gif)
 
 ### 3.장애물 만들기
 ![Dino Run 3](https://user-images.githubusercontent.com/50513500/152314304-e6acbdd3-7bff-4153-b713-92d237a6955c.gif)
@@ -66,6 +68,5 @@ https://www.youtube.com/watch?v=ktm-hvm6r8s
 * 2단점프 기능 구현
 * 플레이 중 특정 조건을 만족 시 업적 클리어와 함께 새로운 아이템 오픈 시스템 구현
 
-##### 간단한 플레이영상
-![Dino Run Final](https://user-images.githubusercontent.com/50513500/153626666-e64447b4-3c87-4834-91ad-c5e8ed66884b.gif)
+
 

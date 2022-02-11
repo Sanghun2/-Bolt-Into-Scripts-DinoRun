@@ -13,7 +13,7 @@ https://www.youtube.com/watch?v=ktm-hvm6r8s
 ### 간단한 플레이영상
 ![Dino Run Final](https://user-images.githubusercontent.com/50513500/153626666-e64447b4-3c87-4834-91ad-c5e8ed66884b.gif)
 
-***
+
 # 구현과정
 
 ### 3.장애물 만들기

@@ -2,14 +2,17 @@
 
 https://www.youtube.com/watch?v=ktm-hvm6r8s
 
+
 ![image](https://user-images.githubusercontent.com/50513500/151666104-d59b56bd-6745-453d-a0e8-27e078e0b806.png)
 
 
 ### 제작목적
 * 이번 프로젝트의 목적은 스크립트가 없이 볼트로 제작된 유니티 프로젝트의 영상을 보고 스크립트를 사용해서 똑같이 구현하여 스크립트를 다루는 역량을 키우는 것 입니다.
 
+
 ### 간단한 플레이영상
 ![Dino Run Final](https://user-images.githubusercontent.com/50513500/153626666-e64447b4-3c87-4834-91ad-c5e8ed66884b.gif)
+
 
 ### 3.장애물 만들기
 ![Dino Run 3](https://user-images.githubusercontent.com/50513500/152314304-e6acbdd3-7bff-4153-b713-92d237a6955c.gif)

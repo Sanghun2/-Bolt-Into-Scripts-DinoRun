@@ -66,3 +66,6 @@ https://www.youtube.com/watch?v=ktm-hvm6r8s
 * 2단점프 기능 구현
 * 플레이 중 특정 조건을 만족 시 업적 클리어와 함께 새로운 아이템 오픈 시스템 구현
 
+##### 간단한 플레이영상
+![Dino Run Final](https://user-images.githubusercontent.com/50513500/153626666-e64447b4-3c87-4834-91ad-c5e8ed66884b.gif)
+

@@ -74,5 +74,5 @@ https://www.youtube.com/watch?v=ktm-hvm6r8s
 * 플레이 중 특정 조건을 만족 시 업적 클리어와 함께 새로운 아이템 오픈 시스템 구현
 
 
-### 플레이영상
+##### 플레이영상
 ![Dino Run Final](https://user-images.githubusercontent.com/50513500/153781386-ed1b7fc4-5a60-433b-b202-b6107db8520d.gif)

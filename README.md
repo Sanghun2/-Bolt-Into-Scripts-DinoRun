@@ -3,6 +3,8 @@
 ### 구글플레이 스토어 다운로드 링크
 https://play.google.com/store/apps/details?id=com.NABI.DinoRunEvolution
 
+### 강좌 링크
+
 https://www.youtube.com/watch?v=ktm-hvm6r8s
 
 

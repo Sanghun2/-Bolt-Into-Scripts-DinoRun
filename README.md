@@ -1,5 +1,8 @@
 # [Bolt Into Scripts] 공룡런 게임 만들기
 
+### 구글플레이 스토어 다운로드 링크
+https://play.google.com/store/apps/details?id=com.NABI.DinoRunEvolution
+
 https://www.youtube.com/watch?v=ktm-hvm6r8s
 
 
